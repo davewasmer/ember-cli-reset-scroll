@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-reset-scroll",
   "version": "0.0.1",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Mixin for resetting the browser window scroll position on route transitions",
   "directories": {
     "doc": "doc",
     "test": "tests"
