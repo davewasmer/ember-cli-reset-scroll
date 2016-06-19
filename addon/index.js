@@ -3,12 +3,12 @@ import Ember from 'ember';
 export default Ember.Mixin.create({
   actions: {
     willTransition: function(transition) {
-      this._super();
+      var ret = this._super.apply(this, arguments);
       var resetScroll = this.get('resetScroll');
 
       // default is opt-in since it's a mixin, set to false to explicitly opt-out
       if (resetScroll === false) {
-        return;
+        return ret;
 
       // scroll to a specific position
       } else if (Ember.typeOf(resetScroll) === 'number') {
@@ -27,6 +27,8 @@ export default Ember.Mixin.create({
       } else {
         scrollToPosition(0);
       }
+      
+      return ret;
     }
   }
 });
